@@ -28,7 +28,6 @@ public class AqiService {
         Map<String, Object> apiResponse;
 
         try {
-            // Call the external AQI API
             apiResponse = webClient.get()
                     .uri(uriBuilder -> uriBuilder
                             .path("/feed/" + cityName + "/")
@@ -50,7 +49,7 @@ public class AqiService {
         Map time = (Map) data.get("time");
         List geo = (List) city.get("geo");
 
-        // Build DTO for frontend
+        
         AqiResponseDto dto = new AqiResponseDto();
         Object aqiValue = data.get("aqi");
         dto.setAqi(aqiValue instanceof Number ? ((Number) aqiValue).intValue() : 0);
