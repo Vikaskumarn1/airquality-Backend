@@ -1,0 +1,21 @@
+package com.aqi_search_backend.config;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.reactive.function.client.WebClient;
+
+@Configuration
+public class WebClientConfig {
+
+    @Value("${app.aqicn.base-url}")
+    private String baseUrl;  // Example: "https://api.waqi.info"
+
+    @Bean
+    public WebClient aqicnWebClient(WebClient.Builder builder) {
+        return builder
+                .baseUrl(baseUrl)
+                .defaultHeader("Accept", "application/json")
+                .build();
+    }
+}
