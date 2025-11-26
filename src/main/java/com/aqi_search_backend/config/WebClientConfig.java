@@ -9,7 +9,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 public class WebClientConfig {
 
     @Value("${app.aqicn.base-url}")
-    private String baseUrl;  // Example: "https://api.waqi.info"
+    private String baseUrl;  
 
     @Bean
     public WebClient aqicnWebClient(WebClient.Builder builder) {
