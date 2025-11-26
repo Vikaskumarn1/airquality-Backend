@@ -9,7 +9,6 @@ public class AqiResponseDto {
     private double latitude;
     private double longitude;
 
-    // Getters & Setters
     public int getAqi() { return aqi; }
     public void setAqi(int aqi) { this.aqi = aqi; }
 
